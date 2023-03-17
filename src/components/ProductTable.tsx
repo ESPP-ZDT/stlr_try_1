@@ -1,5 +1,5 @@
-import React from 'react';
-import { Product } from '../types';
+import React from "react";
+import { Product } from "../types";
 
 interface Props {
   products: Product[];
@@ -23,7 +23,7 @@ const ProductTable: React.FC<Props> = ({ products, onDelete }) => {
           </tr>
         </thead>
         <tbody>
-          {products.map(product => (
+          {products.map((product) => (
             <tr key={product.id}>
               <td>{product.title}</td>
               <td>{product.description}</td>
