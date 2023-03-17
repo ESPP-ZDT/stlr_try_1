@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Product } from "./types";
 import ProductTable from "./components/ProductTable";
+import AddProductForm from "./components/AddProductForm";
 
 const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -24,6 +25,10 @@ const ProductList = () => {
     setSearchQuery(event.target.value);
   };
 
+  const handleAdd = (product: Product) => {
+    setProducts([...products, product]);
+  };
+
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -32,6 +37,7 @@ const ProductList = () => {
     <div>
       <input type="text" value={searchQuery} onChange={handleSearch} />
       <ProductTable products={filteredProducts} onDelete={handleDelete} />
+      <AddProductForm onAdd={handleAdd} />
     </div>
   );
 };
