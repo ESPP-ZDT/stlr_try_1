@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Product } from "../types";
+import './AddProductForm.css';
+
 
 interface Props {
   onAdd: (product: Product) => void;
