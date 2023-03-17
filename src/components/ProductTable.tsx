@@ -1,6 +1,6 @@
 import React from "react";
 import { Product } from "../types";
-import "./ProductTable.css"
+import "./ProductTable.css";
 
 interface Props {
   products: Product[];
@@ -33,7 +33,7 @@ const ProductTable: React.FC<Props> = ({ products, onDelete }) => {
               <td>{product.stock}</td>
               <td>{product.brand}</td>
               <td>{product.category}</td>
-              <td>
+              <td className="delete-button">
                 <button onClick={() => onDelete(product.id)}>Delete</button>
               </td>
             </tr>
